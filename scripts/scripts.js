@@ -50,14 +50,33 @@
 //=========================================================================
 
 //1. Get a reference to the button --> querySelector
-let clickity = document.querySelector('button')
+let clickity = document.querySelector('#clickMe')
 
 //2. Define a function to alert user
 function ouch(event) {
-    alert("Ouch! Pok Gai Hum Gah Chan!");
-    clickity.removeEventListener('click', ouch);
+    alert("Ouch! Ding lay go fai");
+    // clickity.removeEventListener('click', ouch);
+    //putting the removeEventListener here will make the button only work once.
+}
+//3. Add function as event listener.
+clickity.addEventListener('click', ouch, {once: true})
+//this way also makes it so the button will only work once. 
+
+function changeBGPink(event){
+    document.body.classList.add("pinkBG")
+    //document itself is not defined so you need to add in body. 
 }
 
-clickity.addEventListener('click', ouch)
+clickity.addEventListener('click', changeBGPink)
 
-//3. Add function as event listener.
+function changeButtonText(){
+    //if it says Click Me! change it to clicked
+    //else change it to Click Me!
+    if (clickity.textContent === "Click Me") {
+    clickity.textContent = "Clicked";
+    } else {
+        clickity.textContent = "Click Me";
+    }
+}
+
+clickity.addEventListener('click', changeButtonText)
