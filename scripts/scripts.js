@@ -47,3 +47,17 @@
 
 // div.addEventListener('click', changePartColor)
 
+//=========================================================================
+
+//1. Get a reference to the button --> querySelector
+let clickity = document.querySelector('button')
+
+//2. Define a function to alert user
+function ouch(event) {
+    alert("Ouch! Pok Gai Hum Gah Chan!");
+    clickity.removeEventListener('click', ouch);
+}
+
+clickity.addEventListener('click', ouch)
+
+//3. Add function as event listener.
