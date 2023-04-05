@@ -2,10 +2,14 @@ body {
     background-color: #99ffff;
 }
 
-div {
+/* div {
     background-color: red;
-}
+} */
 
 .greenBackground {
     background-color: green;
+}
+
+.pinkBG {
+    background-color: pink;
 }
